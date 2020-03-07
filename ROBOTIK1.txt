@@ -1,0 +1,397 @@
+// UNTUK MENGHASILKAN OUTPUT DI SERIAL MONITOR
+
+char input;
+int merah=2;
+int kuning=3;
+int hijau=4;
+
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  if (Serial.available()) {
+    input = Serial.read();
+  }
+  
+  if (input=='2') 
+      {
+    	Serial.println("lAMPU MERAH MENYALA");
+  		digitalWrite(merah,HIGH);
+    	delay(5000);
+    	digitalWrite(kuning,LOW);
+    	Serial.println("lAMPU KUNING MATI");
+    	digitalWrite(hijau,LOW);
+  	  } 
+  else if (input=='1')
+      {
+    	Serial.println("LAMPU MERAH MENYALA");
+  		digitalWrite(merah,LOW);
+    	digitalWrite(kuning,LOW);
+    	digitalWrite(hijau,HIGH);
+  	  } 
+  else if (input=='3')
+      {
+    	Serial.println("EROR");
+   		digitalWrite(kuning,HIGH);
+    	delay(100);
+    	digitalWrite(hijau,LOW);
+    	digitalWrite(merah,LOW);
+  	  }
+
+      
+       
+  //digitalWrite(2, HIGH);
+  //delay(1000); // Wait for 1000 millisecond(s)
+  //digitalWrite(2, LOW);
+  //delay(1000); // Wait for 1000 millisecond(s)
+
+  
+  
+}
+
+// SOURCODE UNTUK PENGGUNAAN PUSHBUTTON
+int merah=2;
+int kuning=3;
+int hijau=4;
+
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, INPUT);
+ 
+}
+
+void loop()
+{
+  
+  int button = digitalRead(5);
+  
+  if (button==LOW) 
+      {
+  		digitalWrite(2,HIGH);
+    	digitalWrite(3,LOW);
+    	digitalWrite(4,LOW);
+  	  } 
+  else 
+      {
+  		digitalWrite(2,LOW);
+    	digitalWrite(3,LOW);
+    	digitalWrite(4,LOW);
+  	  } 
+ 
+      
+       
+  //digitalWrite(2, HIGH);
+  //delay(1000); // Wait for 1000 millisecond(s)
+  //digitalWrite(2, LOW);
+  //delay(1000); // Wait for 1000 millisecond(s)
+
+  
+  
+}
+
+
+//
+
+int merah=2;
+int kuning=3;
+int hijau=4;
+
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, INPUT);
+  Serial.begin(9600);
+ 
+}
+
+void loop()
+{
+  
+  int button = digitalRead(5);
+
+  
+  Serial.println(button);
+  if (button==LOW) 
+      {
+    	Serial.println("LAMPU MERAH DAN KUNING MENYALA");
+  		digitalWrite(2,HIGH);
+    	delay(100);
+    	digitalWrite(3,HIGH);
+    	delay(100);
+    	digitalWrite(4,LOW);
+    	
+  	  } 
+ 
+  else 
+      {
+  		digitalWrite(2,LOW);
+    	digitalWrite(3,LOW);
+    	digitalWrite(4,LOW);
+  	  } 
+ 
+      
+       
+  //digitalWrite(2, HIGH);
+  //delay(1000); // Wait for 1000 millisecond(s)
+  //digitalWrite(2, LOW);
+  //delay(1000); // Wait for 1000 millisecond(s)
+
+  
+  
+}
+
+
+/// sourcode perulangan pada button
+
+int merah=2;
+int kuning=3;
+int hijau=4;
+int buttn=1;
+int count=0;
+
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(bttn, INPUT);
+  Serial.begin(9600);
+ 
+}
+
+void loop()
+{
+  
+  int button = digitalRead(5);
+
+  
+  Serial.println(button);
+  if (button==LOW) 
+    if (count==0)
+      {
+    	Serial.println("LAMPU MERAH DAN KUNING MENYALA");
+  		digitalWrite(2,HIGH);
+    	delay(100);
+    	digitalWrite(3,HIGH);
+    	delay(100);
+    	digitalWrite(4,LOW);
+    	count=count+1;
+  	  } 
+ 
+  else if(count==1)
+      {
+  		Serial.println("LAMPU MERAH DAN KUNING MENYALA");
+  		digitalWrite(2,HIGH);
+    	delay(100);
+    	digitalWrite(3,HIGH);
+    	delay(100);
+    	digitalWrite(4,LOW);
+    	count=count+1;
+  	  } 
+ else if(count==2)
+       {
+  		digitalWrite(2,LOW);
+    	digitalWrite(3,LOW);
+    	digitalWrite(4,LOW);
+  	  } 
+      
+       
+  //digitalWrite(2, HIGH);
+  //delay(1000); // Wait for 1000 millisecond(s)
+  //digitalWrite(2, LOW);
+  //delay(1000); // Wait for 1000 millisecond(s)
+
+
+void perulangan()
+delay (100);
+int buttonState = digitalRead(pushButton)
+Serial.println(i);
+if(buttonState==0) {
+	switch(i%2) {
+
+case 0 :
+	digitalWrite(led,HIGH);
+	digitalWrite(led,LOW);
+	i++;
+	break;
+case 1 :
+	digitalWrite(led,HIGH);
+	digitalWrite(led,LOW);
+	i++;
+	break;
+}
+
+	
+  
+}
+
+
+
+//
+void loop()
+if (digitalRead(buttonPin)==0) {
+	push ++'
+delay(100);
+}
+
+else if (push==0){
+	digitalWrite(merah,0);
+	digitalWrite(kuning,0);
+	digitalWrite(hijau,0);
+}
+else if (push==1) {
+	digitalWrite(merah,1);
+	digitalWrite(kuning,1);
+	digitalWrite(hijau,1);
+}
+else if(push==2) {
+	digitalWrite(merah,2);
+	digitalWrite(kuning,2);
+	digitalWrite(hijau,2);
+}
+else if(push==3) {
+	digitalWrite(merah,3);
+	digitalWrite(kuning,3);
+	digitalWrite(hijau,3);
+}
+else {
+push=1;
+}
+delay(100);
+
+}
+
+
+//
+
+
+MOTOR DRIVER L298N
+	     L293D
+
+LD93D
+1
+
+
+//
+
+int in3=3;
+int in4=5;
+int enA;
+void setup()
+{
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(in3, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(in4, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(enA,HIGH);
+}
+
+
+// MENGGUNAKAN 2 MOTOR DRIVER // DUA RODA
+
+int in3=5;
+int in4=3;
+int in1=7;
+int in2=8;
+int enA=6;
+int enB=9;
+void setup()
+{
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  analogWrite(enA,200);
+  analogWrite(enB,200);
+}
+
+
+// MENGGUNAKAN BELOK KIRI KANAN
+
+char input;
+int in3=5;
+int in4=3;
+int in1=7;
+int in2=8;
+int enA=6;
+int enB=9;
+
+void setup()
+{
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  if(Serial.available()) {
+    input=Serial.read();
+  }
+  //MAJU
+  if (input=='f') {
+  //KIRI
+  digitalWrite(in1,HIGH);
+  digitalWrite(in2,LOW);
+  analogWrite(enA,200);    
+  digitalWrite(in3,HIGH);
+  digitalWrite(in4,LOW);
+  analogWrite(enB,200);
+  } else if(input=='b') {
+  //MUNDUR
+  //KIRI
+  digitalWrite(in1,LOW);
+  digitalWrite(in2,HIGH);
+  analogWrite(enA,200);
+  digitalWrite(in3,LOW);
+  digitalWrite(in4,HIGH);
+  analogWrite(enB,200);
+  }
+  else if(input=='c') {
+  //BELOK KIRI
+  digitalWrite(in1,LOW);
+  digitalWrite(in2,HIGH);
+  digitalWrite(in3,HIGH);
+  digitalWrite(in4,LOW);
+  analogWrite(enA,200);
+  analogWrite(enB,200);
+  }
+  else if(input=='d') {
+  //BELOK KANAN
+  digitalWrite(in1,HIGH);
+  digitalWrite(in2,LOW);
+  digitalWrite(in3,LOW);
+  digitalWrite(in4,HIGH);
+  analogWrite(enA,200);
+  analogWrite(enB,200);
+  }
+   
+
+}
